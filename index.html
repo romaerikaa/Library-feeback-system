@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e6f7ff;
+        }
+
+        .banner {
+            background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .agreement-box {
+            background-color: #cce5ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 90%;
+            margin: 20px auto;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .radio-section-center {
+            width: 90%;
+            margin: 0 auto 20px;
+            padding: 20px;
+        }
+
+        .login-container {
+            display: none;
+            background-color: #e6f7ff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .login-box {
+            background-color: #cce5ff;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        .login-box input {
+            background-color: #e6f7ff;
+            border: 2px solid #999;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .login-box input::placeholder {
+            color: #000;
+            font-weight: bold;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Welcome Page -->
+    <div id="welcomePage">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    📚 library
+                </a>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="banner">
+            <h1 class="fw-bold">WELCOME</h1>
+            <p class="fs-5">We love to hear your feedback to our library service</p>
+        </div>
+
+        <!-- User Agreement Box -->
+        <div class="agreement-box text-center">
+            <h4 class="fw-bold">User Agreement</h4>
+            <p class="fst-italic text-start">
+                By using this system, you agree to follow all rules and policies. You must provide true and accurate
+                information and use the system responsibly. Any misuse, such as sharing false data or unauthorized
+                access,
+                may result in restricted use or suspension. Your data will be handled securely and used only for
+                official
+                purposes.
+                <br><br>
+                Users are expected to maintain confidentiality of their login credentials and report any unusual
+                activity
+                immediately to the system administrator. The library management reserves the right to monitor system
+                activity
+                to ensure compliance with institutional policies.
+                <br><br>
+                The use of this system implies that you understand and accept the terms and conditions stated herein.
+                Please note that updates to the policy may occur periodically, and users are responsible for staying
+                informed
+                about these changes.
+                <br><br>
+                Repeated violations of the terms may lead to termination of access privileges. Always use the system
+                ethically
+                and contribute to maintaining a safe, respectful, and data-secure environment for everyone.
+            </p>
+            <p class="text-start">Click <b>"I Agree"</b> to continue.</p>
+        </div>
+
+        <div class="radio-section-center">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="agree" id="agree1">
+                <label class="form-check-label" for="agree1">
+                    I agree with the terms and conditions above
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="agree" id="agree2">
+                <label class="form-check-label" for="agree2">
+                    I don't agree
+                </label>
+            </div>
+            <div class="text-center mt-4">
+                <button class="btn btn-warning btn-lg px-5 fw-bold" id="startBtn">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    📚 library
+                </a>
+            </div>
+        </nav>
+
+        <div class="login-box">
+            <h4 class="fw-bold mb-4">Provide feedback about your experience!</h4>
+
+            <form id="loginForm">
+                <input type="email" class="form-control" placeholder="Email">
+                <input type="password" class="form-control" placeholder="Password:">
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg px-5 fw-bold">LOGIN</button>
+                </div>
+
+                <p class="text-center mt-3">
+                    Doesn't have an account? <a href="#" id="showSignup" class="text-decoration-none">Sign-up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign-up Page -->
+    <div id="signupPage" class="login-container">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    📚 library
+                </a>
+            </div>
+        </nav>
+
+        <div class="login-box">
+            <h4 class="fw-bold mb-4">Create your account!</h4>
+
+            <form id="signupForm">
+                <input type="text" class="form-control" placeholder="Full Name">
+                <input type="email" class="form-control" placeholder="Email">
+                <input type="password" class="form-control" placeholder="Password:">
+                <input type="password" class="form-control" placeholder="Confirm Password:">
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg px-5 fw-bold">SIGN UP</button>
+                </div>
+
+                <p class="text-center mt-3">
+                    Already have an account? <a href="#" id="showLogin" class="text-decoration-none">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Survey Page -->
+    <div id="surveyPage" class="login-container">
+        <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    📚 library
+                </a>
+            </div>
+        </nav>
+
+        <div style="max-width: 800px; margin: 50px auto; background: white; padding: 30px; border-radius: 15px;">
+            <!-- Progress Bar -->
+            <div class="mb-4">
+                <div class="progress" style="height: 10px;">
+                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Question Container -->
+            <div id="questionContainer" class="text-center mb-5">
+                <h3 class="mb-4" id="questionText">Question will appear here</h3>
+                <div id="answerArea"></div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="text-center">
+                <button class="btn btn-secondary px-4 me-2" id="prevBtn" style="display: none;">Previous</button>
+                <button class="btn btn-danger px-5" id="nextBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankYouPage" class="login-container" style="display: none; align-items: center; justify-content: center;">
+        <div class="text-center" style="position: relative; z-index: 10;">
+            <h1 class="display-3 fw-bold mb-4">Thank You!</h1>
+            <p class="fs-4">For answering our survey</p>
+            <p class="fs-5 mt-3">Your feedback helps us improve our library services</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script>
+        // Survey Questions - YOU CAN EDIT THESE
+        const questions = [
+            {
+                question: "How satisfied are you with the library's book collection?",
+                type: "stars"
+            },
+            {
+                question: "Question 2: Your question here",
+                type: "stars"
+            },
+            {
+                question: "Question 3: Your question here",
+                type: "stars"
+            },
+            {
+                question: "Question 4: Your question here",
+                type: "stars"
+            },
+            {
+                question: "Question 5: Your question here",
+                type: "stars"
+            },
+            {
+                question: "Question 6: Your question here",
+                type: "stars"
+            },
+            {
+                question: "Do you have any suggestions?",
+                type: "text"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = [];
+
+        function displayQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('questionText').textContent = q.question;
+
+            const answerArea = document.getElementById('answerArea');
+
+            if (q.type === 'stars') {
+                answerArea.innerHTML = `
+                    <div class="star-rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <style>
+                        .star { font-size: 60px; color: #ddd; cursor: pointer; }
+                        .star:hover, .star.active { color: #ffd700; }
+                    </style>
+                `;
+
+                document.querySelectorAll('.star').forEach(star => {
+                    star.addEventListener('click', function () {
+                        const value = this.dataset.value;
+                        document.querySelectorAll('.star').forEach((s, i) => {
+                            s.classList.toggle('active', i < value);
+                        });
+                        answers[currentQuestion] = value;
+                    });
+                });
+            } else {
+                answerArea.innerHTML = `
+                    <textarea class="form-control" rows="5" placeholder="Type your suggestions here..." 
+                        style="max-width: 600px; margin: 0 auto;">${answers[currentQuestion] || ''}</textarea>
+                `;
+            }
+
+            // Update progress bar
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+
+            // Show/hide previous button
+            document.getElementById('prevBtn').style.display = currentQuestion > 0 ? 'inline-block' : 'none';
+
+            // Change next button text on last question
+            document.getElementById('nextBtn').textContent = currentQuestion === questions.length - 1 ? 'Submit' : 'Next';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('startBtn').addEventListener('click', function () {
+                const agreeRadio = document.getElementById('agree1');
+                const disagreeRadio = document.getElementById('agree2');
+
+                if (agreeRadio.checked) {
+                    document.getElementById('welcomePage').style.display = 'none';
+                    document.getElementById('loginPage').style.display = 'block';
+                } else if (disagreeRadio.checked) {
+                    alert('You must agree to the terms and conditions to continue.');
+                } else {
+                    alert('Please select an option to continue.');
+                }
+            });
+
+            document.getElementById('showSignup').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('signupPage').style.display = 'block';
+            });
+
+            document.getElementById('showLogin').addEventListener('click', function (e) {
+                e.preventDefault();
+                document.getElementById('signupPage').style.display = 'none';
+                document.getElementById('loginPage').style.display = 'block';
+            });
+
+            // Login form submission
+            document.getElementById('loginForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('surveyPage').style.display = 'block';
+                displayQuestion();
+            });
+
+            // Sign up form submission
+            document.getElementById('signupForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                document.getElementById('signupPage').style.display = 'none';
+                document.getElementById('surveyPage').style.display = 'block';
+                displayQuestion();
+            });
+
+            // Next button
+            document.getElementById('nextBtn').addEventListener('click', function () {
+                // Save current answer
+                const q = questions[currentQuestion];
+                if (q.type === 'text') {
+                    const textarea = document.querySelector('#answerArea textarea');
+                    answers[currentQuestion] = textarea.value;
+                }
+
+                if (currentQuestion < questions.length - 1) {
+                    currentQuestion++;
+                    displayQuestion();
+                } else {
+                    // Survey completed - show thank you page with confetti
+                    document.getElementById('surveyPage').style.display = 'none';
+                    document.getElementById('thankYouPage').style.display = 'flex';
+
+                    // Trigger confetti
+                    const duration = 3 * 1000;
+                    const end = Date.now() + duration;
+
+                    (function frame() {
+                        confetti({
+                            particleCount: 3,
+                            angle: 60,
+                            spread: 55,
+                            origin: { x: 0 },
+                            colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+                        });
+                        confetti({
+                            particleCount: 3,
+                            angle: 120,
+                            spread: 55,
+                            origin: { x: 1 },
+                            colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff']
+                        });
+
+                        if (Date.now() < end) {
+                            requestAnimationFrame(frame);
+                        }
+                    }());
+
+                    console.log('Survey Answers:', answers);
+                }
+            });
+
+            // Previous button
+            document.getElementById('prevBtn').addEventListener('click', function () {
+                if (currentQuestion > 0) {
+                    currentQuestion--;
+                    displayQuestion();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
